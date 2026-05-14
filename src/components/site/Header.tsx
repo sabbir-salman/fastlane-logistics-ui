@@ -1,11 +1,20 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Link, useLocation } from "@tanstack/react-router";
 import {
   Phone, Mail, MapPin, Globe, Headset,
   Search, User, ShoppingCart, ArrowRight, Truck, Menu, X,
 } from "lucide-react";
 
-const navLinks = ["Home", "About", "Services", "Projects", "News", "Shop", "Contact"];
+const navLinks: { label: string; to: string }[] = [
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Services", to: "/" },
+  { label: "Projects", to: "/" },
+  { label: "News", to: "/" },
+  { label: "Shop", to: "/" },
+  { label: "Contact", to: "/contact" },
+];
 
 export function TopBar() {
   return (
