@@ -1,11 +1,20 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Link, useLocation } from "@tanstack/react-router";
 import {
   Phone, Mail, MapPin, Globe, Headset,
   Search, User, ShoppingCart, ArrowRight, Truck, Menu, X,
 } from "lucide-react";
 
-const navLinks = ["Home", "About", "Services", "Projects", "News", "Shop", "Contact"];
+const navLinks: { label: string; to: string }[] = [
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Services", to: "/" },
+  { label: "Projects", to: "/" },
+  { label: "News", to: "/" },
+  { label: "Shop", to: "/" },
+  { label: "Contact", to: "/contact" },
+];
 
 export function TopBar() {
   return (
@@ -44,6 +53,7 @@ function InfoItem({ icon, text }: { icon: React.ReactNode; text: string }) {
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -72,17 +82,20 @@ export function Navbar() {
         </a>
 
         <nav className="hidden lg:flex items-center gap-1">
-          {navLinks.map((l, i) => (
-            <a
-              key={l}
-              href="#"
-              className={`relative px-4 py-2 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors group`}
-            >
-              {l}
-              <span className="absolute left-4 right-4 -bottom-0.5 h-px bg-brand-red scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
-              {i === 0 && <span className="absolute left-1/2 -translate-x-1/2 -bottom-0.5 h-px w-6 bg-brand-red" />}
-            </a>
-          ))}
+          {navLinks.map((l) => {
+            const active = pathname === l.to && l.to !== "/" ? true : pathname === "/" && l.to === "/";
+            return (
+              <Link
+                key={l.label}
+                to={l.to}
+                className="relative px-4 py-2 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors group"
+              >
+                {l.label}
+                <span className="absolute left-4 right-4 -bottom-0.5 h-px bg-brand-red scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
+                {active && <span className="absolute left-1/2 -translate-x-1/2 -bottom-0.5 h-px w-6 bg-brand-red" />}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-1.5">
@@ -116,9 +129,9 @@ export function Navbar() {
         >
           <div className="container mx-auto px-6 py-4 flex flex-col gap-1">
             {navLinks.map((l) => (
-              <a key={l} href="#" className="px-3 py-3 text-primary-foreground/80 hover:text-primary-foreground hover:bg-white/5 rounded-lg text-sm font-medium">
-                {l}
-              </a>
+              <Link key={l.label} to={l.to} onClick={() => setOpen(false)} className="px-3 py-3 text-primary-foreground/80 hover:text-primary-foreground hover:bg-white/5 rounded-lg text-sm font-medium">
+                {l.label}
+              </Link>
             ))}
           </div>
         </motion.div>
