@@ -9,7 +9,7 @@ import {
 const navLinks: { label: string; to: string }[] = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Services", to: "/" },
+  { label: "Services", to: "/services" },
   { label: "Projects", to: "/" },
   { label: "News", to: "/" },
   { label: "Shop", to: "/" },
@@ -83,16 +83,19 @@ export function Navbar() {
 
         <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((l) => {
-            const active = pathname === l.to && l.to !== "/" ? true : pathname === "/" && l.to === "/";
+            const active = l.to === "/" ? pathname === "/" : pathname === l.to;
             return (
               <Link
                 key={l.label}
                 to={l.to}
-                className="relative px-4 py-2 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors group"
+                className={`relative px-4 py-2 text-sm font-medium transition-colors group ${
+                  active ? "text-primary-foreground" : "text-primary-foreground/80 hover:text-primary-foreground"
+                }`}
               >
                 {l.label}
-                <span className="absolute left-4 right-4 -bottom-0.5 h-px bg-brand-red scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
-                {active && <span className="absolute left-1/2 -translate-x-1/2 -bottom-0.5 h-px w-6 bg-brand-red" />}
+                <span className={`absolute left-4 right-4 -bottom-0.5 h-px bg-brand-red origin-left transition-transform duration-300 ${
+                  active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                }`} />
               </Link>
             );
           })}
