@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { TopBar, Navbar } from "@/components/site/Header";
+import { Navbar } from "@/components/site/Header";
 import { PageHero } from "@/components/site/PageHero";
 import {
   CoreValues, EndToEnd, IndustriesSupport,
@@ -23,7 +23,6 @@ export const Route = createFileRoute("/services")({
 function ServicesPage() {
   return (
     <div className="min-h-screen bg-background">
-      <TopBar />
       <Navbar />
       <main>
         <PageHero

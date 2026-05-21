@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { TopBar, Navbar } from "@/components/site/Header";
+import { Navbar } from "@/components/site/Header";
 import { PageHero } from "@/components/site/PageHero";
 import { ContactInfo, ContactForm, MapSection, FAQ } from "@/components/site/ContactSections";
 import { CTA, Footer } from "@/components/site/Footer";
@@ -21,7 +21,6 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   return (
     <div className="min-h-screen bg-background">
-      <TopBar />
       <Navbar />
       <main>
         <PageHero
