@@ -2,53 +2,19 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "@tanstack/react-router";
 import {
-  Phone, Mail, MapPin, Globe, Headset,
-  Search, User, ShoppingCart, ArrowRight, Truck, Menu, X,
+  Phone,
+  ArrowRight,
+  Truck,
+  Menu,
+  X,
 } from "lucide-react";
 
 const navLinks: { label: string; to: string }[] = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
-  { label: "Projects", to: "/" },
-  { label: "News", to: "/" },
-  { label: "Shop", to: "/" },
   { label: "Contact", to: "/contact" },
 ];
-
-export function TopBar() {
-  return (
-    <div className="hidden lg:block bg-soft-gray border-b border-border">
-      <div className="container mx-auto px-6 flex items-center justify-between py-2.5 text-xs">
-        <div className="flex items-center gap-7 text-muted-foreground">
-          <InfoItem icon={<Phone className="size-3.5" />} text="+1800 - 668 333" />
-          <InfoItem icon={<Mail className="size-3.5" />} text="fastcargo@gmail.com" />
-          <InfoItem icon={<MapPin className="size-3.5" />} text="1234 Elmwood Ave, Ste 500, Atlanta" />
-        </div>
-        <div className="flex items-center gap-5 text-muted-foreground">
-          <button className="flex items-center gap-2 hover:text-navy transition-colors">
-            <Globe className="size-3.5" />
-            <span>EN — English</span>
-          </button>
-          <span className="h-3 w-px bg-border" />
-          <button className="flex items-center gap-2 hover:text-brand-red transition-colors">
-            <Headset className="size-3.5" />
-            <span>24/7 Support</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function InfoItem({ icon, text }: { icon: React.ReactNode; text: string }) {
-  return (
-    <div className="flex items-center gap-2.5">
-      <span className="grid place-items-center size-7 rounded-full bg-navy text-primary-foreground">{icon}</span>
-      <span className="text-foreground/80">{text}</span>
-    </div>
-  );
-}
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -101,16 +67,17 @@ export function Navbar() {
           })}
         </nav>
 
-        <div className="flex items-center gap-1.5">
-          <IconBtn><Search className="size-4" /></IconBtn>
-          <IconBtn><User className="size-4" /></IconBtn>
-          <IconBtn>
-            <ShoppingCart className="size-4" />
-            <span className="absolute -top-0.5 -right-0.5 size-4 rounded-full bg-brand-red text-[10px] grid place-items-center text-white font-semibold">2</span>
-          </IconBtn>
+        <div className="flex items-center gap-5">
+          <a
+            href="tel:+1800668333"
+            className="hidden md:flex items-center gap-2 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+          >
+            <Phone className="size-4" />
+            <span>+1 (800) 668-333</span>
+          </a>
           <a
             href="#quote"
-            className="hidden md:inline-flex ml-2 items-center gap-2 rounded-full bg-brand-red hover:bg-brand-red-soft text-white text-sm font-semibold px-5 py-2.5 transition-all hover:shadow-glow-red group"
+            className="hidden md:inline-flex items-center gap-2 rounded-full bg-brand-red hover:bg-brand-red-soft text-white text-sm font-semibold px-5 py-2.5 transition-all hover:shadow-glow-red group"
           >
             Request A Quote
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
@@ -136,17 +103,25 @@ export function Navbar() {
                 {l.label}
               </Link>
             ))}
+            <div className="mt-2 pt-3 border-t border-white/10 flex flex-col gap-3">
+              <a
+                href="tel:+1800668333"
+                className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground"
+              >
+                <Phone className="size-4" />
+                <span>+1 (800) 668-333</span>
+              </a>
+              <a
+                href="#quote"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-red hover:bg-brand-red-soft text-white text-sm font-semibold px-5 py-2.5 transition-all hover:shadow-glow-red group"
+              >
+                Request A Quote
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </div>
           </div>
         </motion.div>
       )}
     </motion.header>
-  );
-}
-
-function IconBtn({ children }: { children: React.ReactNode }) {
-  return (
-    <button className="relative grid place-items-center size-10 rounded-lg text-primary-foreground/80 hover:text-primary-foreground hover:bg-white/10 transition-colors">
-      {children}
-    </button>
   );
 }
