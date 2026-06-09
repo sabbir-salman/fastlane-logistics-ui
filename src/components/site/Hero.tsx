@@ -38,7 +38,7 @@ export function Hero() {
 
           <motion.h1
             variants={fadeUp} initial="hidden" animate="show" custom={1}
-            className="mt-6 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] text-balance"
+            className="mt-6 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.05] text-balance"
           >
             Smart Logistics That{" "}
             <span className="relative inline-block">
