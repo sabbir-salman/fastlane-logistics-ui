@@ -40,32 +40,25 @@ export function Hero() {
             variants={fadeUp} initial="hidden" animate="show" custom={1}
             className="mt-6 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] text-balance"
           >
-            Smart Logistics Solutions That{" "}
+            Smart Logistics That{" "}
             <span className="relative inline-block">
-              <span className="relative z-10 bg-gradient-to-r from-white to-brand-red-soft bg-clip-text text-transparent">
-                Move Your Business
+              <span className="relative z-10 bg-gradient-to-r from-brand-red to-brand-red-soft bg-clip-text text-transparent">
+                Move Business
               </span>
             </span>{" "}
             Forward.
           </motion.h1>
-
-          <motion.p
-            variants={fadeUp} initial="hidden" animate="show" custom={2}
-            className="mt-6 text-base lg:text-lg text-primary-foreground/75 max-w-xl"
-          >
-            Reliable global freight solutions, connecting businesses worldwide.
-          </motion.p>
 
           <motion.div
             variants={fadeUp} initial="hidden" animate="show" custom={3}
             className="mt-9 flex flex-wrap items-center gap-3"
           >
             <a href="#quote" className="group inline-flex items-center gap-2 rounded-full bg-brand-red hover:bg-brand-red-soft px-6 py-3.5 text-sm font-semibold text-white transition-all hover:shadow-glow-red">
-              Ship Immediately
+              Ship Now
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a href="#services" className="group inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/15 border border-white/15 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all">
-              View All Services
+              View Services
               <ArrowUpRight className="size-4 transition-transform group-hover:rotate-12" />
             </a>
           </motion.div>
