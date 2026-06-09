@@ -17,15 +17,14 @@ export function Hero() {
         <img
           src={heroImg}
           alt="Global logistics network world map"
-          className="size-full object-cover opacity-90"
+          className="size-full object-cover"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/95 via-navy-deep/85 to-navy-deep/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/40 via-transparent to-navy-deep/70" />
-        <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,transparent_40%,hsl(var(--navy-deep)/0.6)_100%)]" />
-
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/80 via-navy-deep/60 to-navy-deep/40" />
+        <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,transparent_30%,hsl(var(--navy-deep)/0.45)_100%)]" />
       </div>
+
 
       <div className="relative container mx-auto px-6 pt-20 pb-28 lg:pt-28 lg:pb-36 grid lg:grid-cols-12 gap-10 items-center">
         <div className="lg:col-span-7 max-w-2xl">
