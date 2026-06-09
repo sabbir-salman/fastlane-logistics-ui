@@ -16,13 +16,15 @@ export function Hero() {
       <div className="absolute inset-0">
         <img
           src={heroImg}
-          alt="Cargo ship and freight trucks at port"
-          className="size-full object-cover opacity-60"
+          alt="Global logistics network world map"
+          className="size-full object-cover opacity-90"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy-deep/30" />
-        <div className="absolute inset-0 gradient-radial-red opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/95 via-navy-deep/85 to-navy-deep/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/40 via-transparent to-navy-deep/70" />
+        <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,transparent_40%,hsl(var(--navy-deep)/0.6)_100%)]" />
+
       </div>
 
       <div className="relative container mx-auto px-6 pt-20 pb-28 lg:pt-28 lg:pb-36 grid lg:grid-cols-12 gap-10 items-center">
@@ -52,7 +54,7 @@ export function Hero() {
             variants={fadeUp} initial="hidden" animate="show" custom={2}
             className="mt-6 text-base lg:text-lg text-primary-foreground/75 max-w-xl"
           >
-            From pickup to delivery, track and manage every shipment in one unified platform — built for speed, clarity, and operational efficiency.
+            Reliable global freight solutions, connecting businesses worldwide.
           </motion.p>
 
           <motion.div
@@ -69,14 +71,6 @@ export function Hero() {
             </a>
           </motion.div>
 
-          <motion.div
-            variants={fadeUp} initial="hidden" animate="show" custom={4}
-            className="mt-12 flex items-center gap-6 text-xs text-primary-foreground/60"
-          >
-            <div className="flex items-center gap-2"><ShieldCheck className="size-4 text-brand-red-soft" /> ISO 9001 Certified</div>
-            <span className="h-3 w-px bg-white/15" />
-            <div>Trusted by 2,400+ brands</div>
-          </motion.div>
         </div>
 
         {/* Right floating cards */}
