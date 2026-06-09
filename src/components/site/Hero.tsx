@@ -105,22 +105,6 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Slider arrows */}
-      <div className="relative container mx-auto px-6 pb-10 flex items-center justify-between text-primary-foreground/60 text-xs">
-        <div className="flex items-center gap-3">
-          <span className="text-brand-red-soft font-semibold">01</span>
-          <span className="h-px w-16 bg-white/20" />
-          <span>04</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <button className="grid place-items-center size-11 rounded-full border border-white/15 hover:bg-white/10 transition-colors">
-            <ChevronLeft className="size-4" />
-          </button>
-          <button className="grid place-items-center size-11 rounded-full bg-brand-red hover:bg-brand-red-soft transition-colors">
-            <ChevronRight className="size-4" />
-          </button>
-        </div>
-      </div>
     </section>
   );
 }
