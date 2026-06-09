@@ -71,14 +71,6 @@ export function Hero() {
             </a>
           </motion.div>
 
-          <motion.div
-            variants={fadeUp} initial="hidden" animate="show" custom={4}
-            className="mt-12 flex items-center gap-6 text-xs text-primary-foreground/60"
-          >
-            <div className="flex items-center gap-2"><ShieldCheck className="size-4 text-brand-red-soft" /> ISO 9001 Certified</div>
-            <span className="h-3 w-px bg-white/15" />
-            <div>Trusted by 2,400+ brands</div>
-          </motion.div>
         </div>
 
         {/* Right floating cards */}
