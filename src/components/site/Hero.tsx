@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight, Plane, Ship, Truck, ShieldCheck } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Plane, Ship, Truck } from "lucide-react";
 import heroImg from "@/assets/hero-logistics.jpg";
 
 const fadeUp = {
