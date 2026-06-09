@@ -16,11 +16,15 @@ export function Hero() {
       <div className="absolute inset-0">
         <img
           src={heroImg}
-          alt="Cargo ship and freight trucks at port"
-          className="size-full object-cover opacity-60"
+          alt="Global logistics network world map"
+          className="size-full object-cover opacity-90"
           width={1920}
           height={1080}
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/95 via-navy-deep/85 to-navy-deep/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/40 via-transparent to-navy-deep/70" />
+        <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,transparent_40%,hsl(var(--navy-deep)/0.6)_100%)]" />
+
         <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy-deep/30" />
         <div className="absolute inset-0 gradient-radial-red opacity-60" />
       </div>
