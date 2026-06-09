@@ -54,7 +54,7 @@ export function Hero() {
             variants={fadeUp} initial="hidden" animate="show" custom={2}
             className="mt-6 text-base lg:text-lg text-primary-foreground/75 max-w-xl"
           >
-            From pickup to delivery, track and manage every shipment in one unified platform — built for speed, clarity, and operational efficiency.
+            Reliable global freight solutions, connecting businesses worldwide.
           </motion.p>
 
           <motion.div
