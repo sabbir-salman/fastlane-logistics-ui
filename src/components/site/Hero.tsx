@@ -25,8 +25,6 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/40 via-transparent to-navy-deep/70" />
         <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,transparent_40%,hsl(var(--navy-deep)/0.6)_100%)]" />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy-deep/30" />
-        <div className="absolute inset-0 gradient-radial-red opacity-60" />
       </div>
 
       <div className="relative container mx-auto px-6 pt-20 pb-28 lg:pt-28 lg:pb-36 grid lg:grid-cols-12 gap-10 items-center">
