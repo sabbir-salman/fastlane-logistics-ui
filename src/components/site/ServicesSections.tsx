@@ -11,6 +11,7 @@ import oceanImg from "@/assets/freight-ocean.jpg";
 import containerImg from "@/assets/freight-container.jpg";
 import airImg from "@/assets/freight-air.jpg";
 import industriesImg from "@/assets/industries-truck.jpg";
+import doorTruckImg from "@/assets/door-to-door-truck.jpg";
 
 /* ============== 2. Core Service Values ============== */
 
@@ -136,58 +137,66 @@ export function EndToEnd() {
 
 /* ============== 4. Door-to-Door Service ============== */
 
-const dtdAddons = ["Fragile", "Express Delivery", "Insurance", "Packaging Support"];
+const dtdSteps = [
+  { icon: ClipboardCheck, title: "Scheduled Pickup", desc: "We collect your cargo at the origin address on a confirmed time window — no waiting, no re-bookings." },
+  { icon: Workflow, title: "Managed Transit", desc: "Air, ocean, or road routing handled by a dedicated coordinator, with customs and documentation prepared in advance." },
+  { icon: Radar, title: "Live Tracking", desc: "Milestone updates from pickup to arrival, visible to your team through a single shipment reference." },
+  { icon: MapPinned, title: "Final-Mile Delivery", desc: "Handed off directly to the receiver's door with proof of delivery and condition reports." },
+];
+
+const dtdHighlights = [
+  "Door-to-door coverage across 120+ countries",
+  "Single point of contact for every shipment",
+  "Customs clearance and duty handling included",
+  "Insurance and fragile-cargo protocols on request",
+];
 
 export function DoorToDoor() {
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-24 lg:py-32 bg-soft-gray">
       <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-10 items-start">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="lg:col-span-7 rounded-3xl bg-card p-8 lg:p-10 shadow-elevated border border-border"
+          className="lg:col-span-7"
         >
           <Badge>Door-to-Door Shipping</Badge>
-          <h3 className="mt-4 text-2xl lg:text-3xl font-bold">Get a door-to-door freight quote</h3>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Tell us where your cargo starts and where it needs to arrive. We handle pickup, transit, customs, and final delivery.
+          <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">
+            One shipment, one team,<br />from your door to theirs.
+          </h2>
+          <p className="mt-5 text-base text-muted-foreground max-w-xl">
+            Fast Cargo owns every step of the journey — pickup, transit, customs, and final delivery — so your operations team never has to chase multiple carriers or vendors again.
           </p>
 
-          <div className="mt-8 grid sm:grid-cols-2 gap-4">
-            <Field label="Full Name" placeholder="John Carter" />
-            <Field label="Company Name" placeholder="Acme Corp" />
-            <Field label="Email" placeholder="you@company.com" type="email" />
-            <Field label="Phone" placeholder="+1 (800) 668 333" />
-            <Field label="Pickup Address" placeholder="Atlanta, USA" />
-            <Field label="Delivery Address" placeholder="Hamburg, DE" />
-            <Field label="Cargo Type" placeholder="Electronics, apparel, machinery…" />
-            <Field label="Estimated Weight" placeholder="800 kg · 2 pallets" />
-            <Field label="Preferred Pickup Date" placeholder="MM / DD / YYYY" />
-            <Field label="Freight Mode" placeholder="Air / Ocean / Road" />
+          <div className="mt-10 grid sm:grid-cols-2 gap-5">
+            {dtdSteps.map((s, i) => (
+              <motion.div
+                key={s.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="rounded-2xl bg-card p-6 border border-border shadow-soft hover:shadow-elevated transition-all"
+              >
+                <span className="grid place-items-center size-11 rounded-xl bg-brand-red/10 text-brand-red">
+                  <s.icon className="size-5" />
+                </span>
+                <div className="mt-4 font-bold">{s.title}</div>
+                <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+              </motion.div>
+            ))}
           </div>
 
-          <label className="mt-4 block">
-            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Special Instructions</span>
-            <textarea
-              rows={3}
-              placeholder="Any access constraints, customs needs, or handling requirements…"
-              className="mt-2 w-full rounded-xl border border-border bg-soft-gray px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:bg-card transition-all resize-none"
-            />
-          </label>
-
-          <div className="mt-6">
-            <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Add-ons</div>
-            <div className="flex flex-wrap gap-2.5">
-              {dtdAddons.map(c => <Chip key={c} label={c} />)}
-            </div>
-          </div>
-
-          <button className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-red hover:bg-brand-red-soft text-white px-7 py-4 text-sm font-semibold transition-all hover:shadow-glow-red group w-full sm:w-auto justify-center">
-            Request Door-to-Door Quote
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-          </button>
+          <ul className="mt-8 grid sm:grid-cols-2 gap-x-6 gap-y-3">
+            {dtdHighlights.map(h => (
+              <li key={h} className="flex items-start gap-2.5 text-sm text-foreground">
+                <Check className="size-4 mt-0.5 text-brand-red shrink-0" />
+                <span>{h}</span>
+              </li>
+            ))}
+          </ul>
         </motion.div>
 
         <motion.div
@@ -198,11 +207,15 @@ export function DoorToDoor() {
           className="lg:col-span-5 lg:sticky lg:top-28"
         >
           <div className="relative rounded-3xl overflow-hidden shadow-elevated">
-            <img src={industriesImg} alt="Door-to-door freight delivery" className="w-full h-[560px] object-cover" loading="lazy" width={1200} height={1200} />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy-deep/30 to-transparent" />
-            <div className="absolute top-6 left-6 inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur border border-white/20 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-white">
+            <img src={doorTruckImg} alt="Fast Cargo delivery truck at a container terminal" className="w-full h-[560px] object-cover" loading="lazy" width={1024} height={1280} />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy-deep/20 to-transparent" />
+            <div className="absolute top-6 left-6 inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur border border-white/25 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-white">
               <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
               Live Coordinators Online
+            </div>
+            <div className="absolute bottom-6 left-6 right-6 text-white">
+              <div className="text-xs uppercase tracking-[0.2em] opacity-80">Coverage</div>
+              <div className="mt-1 text-2xl font-bold leading-tight">120+ countries · 24/7 dispatch</div>
             </div>
           </div>
 
@@ -215,15 +228,16 @@ export function DoorToDoor() {
           >
             <div className="flex items-start gap-4">
               <span className="grid place-items-center size-12 rounded-xl bg-brand-red text-white shrink-0">
-                <MapPinned className="size-5" />
+                <Phone className="size-5" />
               </span>
               <div className="min-w-0">
-                <div className="font-bold text-base leading-snug">End-to-End Delivery Management</div>
+                <div className="font-bold text-base leading-snug">Talk to a coordinator</div>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  We coordinate every mile from pickup to delivery — including customs, tracking, and last-mile handoff.
+                  Get pickup slots and transit options in one call — no forms, no back-and-forth.
                 </p>
                 <a href="tel:+18006683333" className="mt-4 inline-flex items-center gap-2 rounded-full bg-navy-deep hover:bg-navy text-white px-5 py-2.5 text-sm font-semibold transition-all">
-                  <Phone className="size-4" /> Call +1 800 - 668 333
+                  Call +1 800 - 668 333
+                  <ArrowRight className="size-4" />
                 </a>
               </div>
             </div>
@@ -234,32 +248,6 @@ export function DoorToDoor() {
   );
 }
 
-function Field({ label, placeholder, type = "text" }: { label: string; placeholder: string; type?: string }) {
-  return (
-    <label className="block">
-      <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{label}</span>
-      <input
-        type={type}
-        placeholder={placeholder}
-        className="mt-2 w-full rounded-xl border border-border bg-soft-gray px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:bg-card transition-all"
-      />
-    </label>
-  );
-}
-
-function Chip({ label }: { label: string }) {
-  return (
-    <label className="cursor-pointer group">
-      <input type="checkbox" className="peer sr-only" />
-      <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:border-navy peer-checked:bg-navy-deep peer-checked:text-white peer-checked:border-navy-deep transition-all">
-        <span className="grid place-items-center size-4 rounded-full border border-current opacity-60 peer-checked:opacity-100">
-          <Check className="size-2.5" />
-        </span>
-        {label}
-      </span>
-    </label>
-  );
-}
 
 /* ============== 5. Industries We Support ============== */
 
