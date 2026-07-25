@@ -327,10 +327,10 @@ export function IndustriesSupport() {
 /* ============== 5. Freight Services Showcase ============== */
 
 const freight = [
-  { num: "01", title: "Road Freight", img: roadImg },
+  { num: "01", title: "Air Freight", img: airImg },
   { num: "02", title: "Ocean Freight", img: oceanImg },
-  { num: "03", title: "Container Shipping", img: containerImg },
-  { num: "04", title: "Air Freight", img: airImg },
+  { num: "03", title: "Road Freight", img: roadImg },
+  { num: "04", title: "Container Shipping", img: containerImg },
 ];
 
 export function FreightShowcase() {
@@ -345,7 +345,7 @@ export function FreightShowcase() {
             </h2>
           </div>
           <p className="max-w-md text-muted-foreground">
-            One operations team, every freight lane — air, ocean, container, and road, integrated under a single platform.
+            One operations team, every freight lane — air, ocean, road, and container, integrated under a single platform.
           </p>
         </div>
 
