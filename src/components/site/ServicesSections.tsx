@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import {
   ArrowRight, Compass, Headphones, ShieldCheck, Target,
   Package, Network, ClipboardList, Cpu, Check,
-  ClipboardCheck, Workflow, Radar, MapPinned,
+  ClipboardCheck, Workflow, Radar, MapPinned, Phone,
 } from "lucide-react";
 import { Badge } from "./Services";
 import roadImg from "@/assets/freight-road.jpg";
