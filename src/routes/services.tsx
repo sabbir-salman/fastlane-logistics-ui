@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Header";
 import { PageHero } from "@/components/site/PageHero";
 import {
-  CoreValues, EndToEnd, IndustriesSupport,
+  CoreValues, EndToEnd, DoorToDoor, IndustriesSupport,
   FreightShowcase, Process, Partners,
 } from "@/components/site/ServicesSections";
 import { CTA, Footer } from "@/components/site/Footer";

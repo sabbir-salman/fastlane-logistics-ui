@@ -134,7 +134,134 @@ export function EndToEnd() {
   );
 }
 
-/* ============== 4. Industries We Support ============== */
+/* ============== 4. Door-to-Door Service ============== */
+
+const dtdAddons = ["Fragile", "Express Delivery", "Insurance", "Packaging Support"];
+
+export function DoorToDoor() {
+  return (
+    <section className="py-24 lg:py-32">
+      <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-10 items-start">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="lg:col-span-7 rounded-3xl bg-card p-8 lg:p-10 shadow-elevated border border-border"
+        >
+          <Badge>Door-to-Door Shipping</Badge>
+          <h3 className="mt-4 text-2xl lg:text-3xl font-bold">Get a door-to-door freight quote</h3>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Tell us where your cargo starts and where it needs to arrive. We handle pickup, transit, customs, and final delivery.
+          </p>
+
+          <div className="mt-8 grid sm:grid-cols-2 gap-4">
+            <Field label="Full Name" placeholder="John Carter" />
+            <Field label="Company Name" placeholder="Acme Corp" />
+            <Field label="Email" placeholder="you@company.com" type="email" />
+            <Field label="Phone" placeholder="+1 (800) 668 333" />
+            <Field label="Pickup Address" placeholder="Atlanta, USA" />
+            <Field label="Delivery Address" placeholder="Hamburg, DE" />
+            <Field label="Cargo Type" placeholder="Electronics, apparel, machinery…" />
+            <Field label="Estimated Weight" placeholder="800 kg · 2 pallets" />
+            <Field label="Preferred Pickup Date" placeholder="MM / DD / YYYY" />
+            <Field label="Freight Mode" placeholder="Air / Ocean / Road" />
+          </div>
+
+          <label className="mt-4 block">
+            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Special Instructions</span>
+            <textarea
+              rows={3}
+              placeholder="Any access constraints, customs needs, or handling requirements…"
+              className="mt-2 w-full rounded-xl border border-border bg-soft-gray px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:bg-card transition-all resize-none"
+            />
+          </label>
+
+          <div className="mt-6">
+            <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Add-ons</div>
+            <div className="flex flex-wrap gap-2.5">
+              {dtdAddons.map(c => <Chip key={c} label={c} />)}
+            </div>
+          </div>
+
+          <button className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-red hover:bg-brand-red-soft text-white px-7 py-4 text-sm font-semibold transition-all hover:shadow-glow-red group w-full sm:w-auto justify-center">
+            Request Door-to-Door Quote
+            <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+          </button>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="lg:col-span-5 lg:sticky lg:top-28"
+        >
+          <div className="relative rounded-3xl overflow-hidden shadow-elevated">
+            <img src={industriesImg} alt="Door-to-door freight delivery" className="w-full h-[560px] object-cover" loading="lazy" width={1200} height={1200} />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy-deep/30 to-transparent" />
+            <div className="absolute top-6 left-6 inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur border border-white/20 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-white">
+              <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Live Coordinators Online
+            </div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="relative -mt-12 mx-4 lg:mx-6 rounded-2xl bg-card p-6 shadow-elevated border border-border"
+          >
+            <div className="flex items-start gap-4">
+              <span className="grid place-items-center size-12 rounded-xl bg-brand-red text-white shrink-0">
+                <MapPinned className="size-5" />
+              </span>
+              <div className="min-w-0">
+                <div className="font-bold text-base leading-snug">End-to-End Delivery Management</div>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  We coordinate every mile from pickup to delivery — including customs, tracking, and last-mile handoff.
+                </p>
+                <a href="tel:+18006683333" className="mt-4 inline-flex items-center gap-2 rounded-full bg-navy-deep hover:bg-navy text-white px-5 py-2.5 text-sm font-semibold transition-all">
+                  <Phone className="size-4" /> Call +1 800 - 668 333
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function Field({ label, placeholder, type = "text" }: { label: string; placeholder: string; type?: string }) {
+  return (
+    <label className="block">
+      <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{label}</span>
+      <input
+        type={type}
+        placeholder={placeholder}
+        className="mt-2 w-full rounded-xl border border-border bg-soft-gray px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:bg-card transition-all"
+      />
+    </label>
+  );
+}
+
+function Chip({ label }: { label: string }) {
+  return (
+    <label className="cursor-pointer group">
+      <input type="checkbox" className="peer sr-only" />
+      <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:border-navy peer-checked:bg-navy-deep peer-checked:text-white peer-checked:border-navy-deep transition-all">
+        <span className="grid place-items-center size-4 rounded-full border border-current opacity-60 peer-checked:opacity-100">
+          <Check className="size-2.5" />
+        </span>
+        {label}
+      </span>
+    </label>
+  );
+}
+
+/* ============== 5. Industries We Support ============== */
 
 const industries = [
   "Fast-Moving Consumer Goods", "E-Commerce & Retail",
