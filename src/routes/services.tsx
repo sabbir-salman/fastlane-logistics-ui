@@ -36,6 +36,7 @@ function ServicesPage() {
         />
         <CoreValues />
         <EndToEnd />
+        <DoorToDoor />
         <IndustriesSupport />
         <FreightShowcase />
         <Process />
