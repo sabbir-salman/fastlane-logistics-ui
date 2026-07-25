@@ -248,32 +248,6 @@ export function DoorToDoor() {
   );
 }
 
-function Field({ label, placeholder, type = "text" }: { label: string; placeholder: string; type?: string }) {
-  return (
-    <label className="block">
-      <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{label}</span>
-      <input
-        type={type}
-        placeholder={placeholder}
-        className="mt-2 w-full rounded-xl border border-border bg-soft-gray px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-navy/30 focus:bg-card transition-all"
-      />
-    </label>
-  );
-}
-
-function Chip({ label }: { label: string }) {
-  return (
-    <label className="cursor-pointer group">
-      <input type="checkbox" className="peer sr-only" />
-      <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:border-navy peer-checked:bg-navy-deep peer-checked:text-white peer-checked:border-navy-deep transition-all">
-        <span className="grid place-items-center size-4 rounded-full border border-current opacity-60 peer-checked:opacity-100">
-          <Check className="size-2.5" />
-        </span>
-        {label}
-      </span>
-    </label>
-  );
-}
 
 /* ============== 5. Industries We Support ============== */
 
