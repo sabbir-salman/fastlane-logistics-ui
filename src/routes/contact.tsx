@@ -30,7 +30,7 @@ function ContactPage() {
           title={<>Let's Move Your Logistics Operations <span className="text-brand-red-soft">Forward.</span></>}
           subtitle="Talk to a senior logistics coordinator about your routes, volume, and delivery requirements — we respond within two business hours."
           primary={{ label: "Request A Quote", to: "/" }}
-          secondary={{ label: "Call Our Team", to: "/contact", href: "tel:+18006683333", icon: <Phone className="size-4" /> }}
+          secondary={{ label: "Call Our Team", to: "/contact", href: "tel:+60320221022", icon: <Phone className="size-4" /> }}
         />
 
         <ContactInfo />

@@ -29,12 +29,12 @@ export function QuoteSection() {
           <div className="mt-8 grid sm:grid-cols-2 gap-4">
             <Input label="Name" placeholder="John Carter" />
             <Input label="Email" placeholder="you@company.com" type="email" />
-            <Input label="Phone" placeholder="+1 (800) 668 333" />
+            <Input label="Phone" placeholder="+60 3 2022 1022" />
             <Input label="Dimensions (L×W×H)" placeholder="120 × 80 × 100 cm" />
             <Input label="Freight Type" placeholder="Air / Ocean / Road" />
             <Input label="Incoterms" placeholder="FOB, CIF, DDP…" />
-            <Input label="Origin Location" placeholder="Atlanta, USA" />
-            <Input label="Destination Location" placeholder="Hamburg, DE" />
+            <Input label="Origin Location" placeholder="Kuala Lumpur, MY" />
+            <Input label="Destination Location" placeholder="Dhaka, BD" />
           </div>
 
           <div className="mt-6">
@@ -69,9 +69,9 @@ export function QuoteSection() {
           </p>
 
           <div className="mt-10 space-y-5">
-            <ContactRow icon={<MapPin className="size-4" />} title="Headquarters" text="1234 Elmwood Ave, Ste 500, Atlanta" />
-            <ContactRow icon={<Phone className="size-4" />} title="Call us anytime" text="+1800 - 668 333" />
-            <ContactRow icon={<Mail className="size-4" />} title="Send a message" text="fastcargo@gmail.com" />
+            <ContactRow icon={<MapPin className="size-4" />} title="Malaysia Office" text="No. 11 & 13, Leboh Pudu, 50050 Kuala Lumpur" />
+            <ContactRow icon={<Phone className="size-4" />} title="Call us anytime" text="+60 3 2022 1022" />
+            <ContactRow icon={<Mail className="size-4" />} title="Send a message" text="fastcargomalaysia@gmail.com" />
           </div>
         </motion.div>
       </div>
@@ -201,9 +201,9 @@ export function Footer() {
         <div className="lg:col-span-4">
           <div className="text-xs uppercase tracking-wider text-primary-foreground/50 mb-5">Contact</div>
           <ul className="space-y-4 text-sm">
-            <li className="flex items-start gap-3"><Phone className="size-4 mt-0.5 text-brand-red-soft" /><span>+1800 - 668 333</span></li>
-            <li className="flex items-start gap-3"><Mail className="size-4 mt-0.5 text-brand-red-soft" /><span>fastcargo@gmail.com</span></li>
-            <li className="flex items-start gap-3"><MapPin className="size-4 mt-0.5 text-brand-red-soft" /><span>1234 Elmwood Ave, Ste 500, Atlanta</span></li>
+            <li className="flex items-start gap-3"><Phone className="size-4 mt-0.5 text-brand-red-soft" /><span>+60 3 2022 1022</span></li>
+            <li className="flex items-start gap-3"><Mail className="size-4 mt-0.5 text-brand-red-soft" /><span>fastcargomalaysia@gmail.com</span></li>
+            <li className="flex items-start gap-3"><MapPin className="size-4 mt-0.5 text-brand-red-soft" /><span>No. 11 & 13, Leboh Pudu, 50050 Kuala Lumpur, Malaysia</span></li>
           </ul>
           <div className="mt-7 flex items-center gap-2.5">
             {[Facebook, Twitter, Send, Heart].map((Icon, i) => (

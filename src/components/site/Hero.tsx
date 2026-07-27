@@ -97,7 +97,7 @@ export function Hero() {
               delay={0.9}
               icon={<Truck className="size-5" />}
               title="Road Freight"
-              meta="Atlanta → Miami"
+              meta="Kuala Lumpur → Dhaka"
               progress={94}
               eta="Arriving today"
             />

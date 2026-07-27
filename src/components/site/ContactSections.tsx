@@ -9,28 +9,28 @@ import { Badge, SectionHeader } from "./Services";
 
 const infoCards = [
   {
-    icon: MapPin, title: "Office Address",
-    main: "1234 Elmwood Ave, Ste 500",
-    sub: "Atlanta, GA 30309, United States",
+    icon: MapPin, title: "Malaysia Office",
+    main: "No. 11 & 13, Leboh Pudu",
+    sub: "50050 Kuala Lumpur, Malaysia",
     cta: "Get Directions",
   },
   {
     icon: Phone, title: "Phone Number",
-    main: "+1 800 - 668 333",
-    sub: "Mon–Fri, 7:00 AM – 8:00 PM EST",
+    main: "+60 3 2022 1022",
+    sub: "+60 13 276 7883 · 7884 · 7885 · 7886",
     cta: "Call Now",
   },
   {
     icon: Mail, title: "Email Support",
-    main: "fastcargo@gmail.com",
+    main: "fastcargomalaysia@gmail.com",
     sub: "Replies within 2 business hours",
     cta: "Send Message",
   },
   {
-    icon: Clock, title: "Business Hours",
-    main: "24 / 7 Operations",
-    sub: "Office hours Mon–Sat 7AM–8PM",
-    cta: "Live Status",
+    icon: MapPin, title: "Bangladesh Office",
+    main: "Twin Tower Shopping Complex",
+    sub: "Shop No. 402, 3rd Floor, Shantinagar, Dhaka-1217",
+    cta: "Get Directions",
   },
 ];
 
@@ -93,10 +93,10 @@ export function ContactForm() {
             <Field label="Full Name" placeholder="John Carter" />
             <Field label="Company Name" placeholder="Acme Corp" />
             <Field label="Email" placeholder="you@company.com" type="email" />
-            <Field label="Phone Number" placeholder="+1 (800) 668 333" />
+            <Field label="Phone Number" placeholder="+60 3 2022 1022" />
             <Field label="Freight Type" placeholder="Air / Ocean / Road" />
-            <Field label="Origin" placeholder="Atlanta, USA" />
-            <Field label="Destination" placeholder="Hamburg, DE" />
+            <Field label="Origin" placeholder="Kuala Lumpur, MY" />
+            <Field label="Destination" placeholder="Dhaka, BD" />
             <Field label="Estimated Volume" placeholder="2 pallets · 800 kg" />
           </div>
 
@@ -197,8 +197,8 @@ export function MapSection() {
       <div className="container mx-auto px-6">
         <SectionHeader
           badge="Find Us"
-          title="Visit Our Atlanta Headquarters."
-          subtitle="Drop by our flagship operations center — coffee is on us."
+          title="Visit Our Kuala Lumpur Headquarters."
+          subtitle="Drop by our Malaysia operations center — our team is ready to help."
         />
 
         <motion.div
@@ -210,8 +210,8 @@ export function MapSection() {
         >
           <div className="relative h-[420px] w-full">
             <iframe
-              title="Fast Cargo HQ map"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-84.41%2C33.77%2C-84.36%2C33.80&layer=mapnik&marker=33.785%2C-84.385"
+              title="Fast Cargo Malaysia HQ map"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=101.693%2C3.144%2C101.703%2C3.152&layer=mapnik&marker=3.1478%2C101.6982"
               className="absolute inset-0 size-full grayscale-[20%] contrast-[1.05]"
               loading="lazy"
             />
@@ -219,8 +219,8 @@ export function MapSection() {
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-red">
                 <Navigation className="size-3.5" /> Headquarters
               </div>
-              <div className="mt-2 font-bold text-base">Fast Cargo HQ</div>
-              <div className="mt-1 text-sm text-muted-foreground">1234 Elmwood Ave, Ste 500, Atlanta, GA 30309</div>
+              <div className="mt-2 font-bold text-base">Fast Cargo Malaysia</div>
+              <div className="mt-1 text-sm text-muted-foreground">No. 11 & 13, Leboh Pudu, 50050 Kuala Lumpur, Malaysia</div>
               <a href="#" className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-navy hover:text-brand-red transition-colors">
                 Open in Maps <ArrowRight className="size-3.5" />
               </a>
@@ -228,9 +228,9 @@ export function MapSection() {
           </div>
 
           <div className="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border">
-            <Detail icon={<MapPin className="size-4" />} title="Address" text="1234 Elmwood Ave, Atlanta" />
-            <Detail icon={<Clock className="size-4" />} title="Office Hours" text="Mon–Sat · 7:00 AM – 8:00 PM" />
-            <Detail icon={<Phone className="size-4" />} title="Direct Line" text="+1 800 - 668 333" />
+            <Detail icon={<MapPin className="size-4" />} title="Address" text="No. 11 & 13, Leboh Pudu, Kuala Lumpur" />
+            <Detail icon={<Clock className="size-4" />} title="Office Hours" text="Mon–Sat · 9:00 AM – 7:00 PM" />
+            <Detail icon={<Phone className="size-4" />} title="Direct Line" text="+60 3 2022 1022" />
           </div>
         </motion.div>
       </div>
@@ -271,7 +271,7 @@ export function FAQ() {
           <p className="mt-5 text-muted-foreground">
             Don't see your question? Our coordinators reply within 2 business hours — and immediately for time-critical freight.
           </p>
-          <a href="mailto:fastcargo@gmail.com" className="mt-7 inline-flex items-center gap-2 rounded-full bg-navy-deep hover:bg-navy text-white px-6 py-3.5 text-sm font-semibold transition-all hover:shadow-elevated group">
+          <a href="mailto:fastcargomalaysia@gmail.com" className="mt-7 inline-flex items-center gap-2 rounded-full bg-navy-deep hover:bg-navy text-white px-6 py-3.5 text-sm font-semibold transition-all hover:shadow-elevated group">
             Ask A Question <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
           </a>
         </div>
