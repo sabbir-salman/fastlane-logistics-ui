@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight, Compass, Headphones, ShieldCheck, Target,
-  Package, Network, ClipboardList, Cpu,
+  Package, Network, ClipboardList, Cpu, Check,
+  ClipboardCheck, Workflow, Radar, MapPinned,
   Home, FileCheck2, Ship, PackageCheck, Phone, Mail, MapPin,
 } from "lucide-react";
 import { Badge } from "./Services";
