@@ -93,10 +93,10 @@ export function ContactForm() {
             <Field label="Full Name" placeholder="John Carter" />
             <Field label="Company Name" placeholder="Acme Corp" />
             <Field label="Email" placeholder="you@company.com" type="email" />
-            <Field label="Phone Number" placeholder="+1 (800) 668 333" />
+            <Field label="Phone Number" placeholder="+60 3 2022 1022" />
             <Field label="Freight Type" placeholder="Air / Ocean / Road" />
-            <Field label="Origin" placeholder="Atlanta, USA" />
-            <Field label="Destination" placeholder="Hamburg, DE" />
+            <Field label="Origin" placeholder="Kuala Lumpur, MY" />
+            <Field label="Destination" placeholder="Dhaka, BD" />
             <Field label="Estimated Volume" placeholder="2 pallets · 800 kg" />
           </div>
 
@@ -271,7 +271,7 @@ export function FAQ() {
           <p className="mt-5 text-muted-foreground">
             Don't see your question? Our coordinators reply within 2 business hours — and immediately for time-critical freight.
           </p>
-          <a href="mailto:fastcargo@gmail.com" className="mt-7 inline-flex items-center gap-2 rounded-full bg-navy-deep hover:bg-navy text-white px-6 py-3.5 text-sm font-semibold transition-all hover:shadow-elevated group">
+          <a href="mailto:fastcargomalaysia@gmail.com" className="mt-7 inline-flex items-center gap-2 rounded-full bg-navy-deep hover:bg-navy text-white px-6 py-3.5 text-sm font-semibold transition-all hover:shadow-elevated group">
             Ask A Question <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
           </a>
         </div>

@@ -29,12 +29,12 @@ export function QuoteSection() {
           <div className="mt-8 grid sm:grid-cols-2 gap-4">
             <Input label="Name" placeholder="John Carter" />
             <Input label="Email" placeholder="you@company.com" type="email" />
-            <Input label="Phone" placeholder="+1 (800) 668 333" />
+            <Input label="Phone" placeholder="+60 3 2022 1022" />
             <Input label="Dimensions (L×W×H)" placeholder="120 × 80 × 100 cm" />
             <Input label="Freight Type" placeholder="Air / Ocean / Road" />
             <Input label="Incoterms" placeholder="FOB, CIF, DDP…" />
-            <Input label="Origin Location" placeholder="Atlanta, USA" />
-            <Input label="Destination Location" placeholder="Hamburg, DE" />
+            <Input label="Origin Location" placeholder="Kuala Lumpur, MY" />
+            <Input label="Destination Location" placeholder="Dhaka, BD" />
           </div>
 
           <div className="mt-6">
