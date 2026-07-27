@@ -3,7 +3,8 @@ import { Link } from "@tanstack/react-router";
 import {
   ArrowRight, Compass, Headphones, ShieldCheck, Target,
   Package, Network, ClipboardList, Cpu, Check,
-  ClipboardCheck, Workflow, Radar, MapPinned, Phone,
+  ClipboardCheck, Workflow, Radar, MapPinned,
+  Home, FileCheck2, Ship, PackageCheck, Phone, Mail, MapPin,
 } from "lucide-react";
 import { Badge } from "./Services";
 import roadImg from "@/assets/freight-road.jpg";
@@ -11,7 +12,7 @@ import oceanImg from "@/assets/freight-ocean.jpg";
 import containerImg from "@/assets/freight-container.jpg";
 import airImg from "@/assets/freight-air.jpg";
 import industriesImg from "@/assets/industries-truck.jpg";
-import doorTruckImg from "@/assets/door-to-door-truck.jpg";
+import doorJourneyImg from "@/assets/door-to-door-journey.jpg";
 
 /* ============== 2. Core Service Values ============== */
 
@@ -138,17 +139,18 @@ export function EndToEnd() {
 /* ============== 4. Door-to-Door Service ============== */
 
 const dtdSteps = [
-  { icon: ClipboardCheck, title: "Scheduled Pickup", desc: "We collect your cargo at the origin address on a confirmed time window — no waiting, no re-bookings." },
-  { icon: Workflow, title: "Managed Transit", desc: "Air, ocean, or road routing handled by a dedicated coordinator, with customs and documentation prepared in advance." },
-  { icon: Radar, title: "Live Tracking", desc: "Milestone updates from pickup to arrival, visible to your team through a single shipment reference." },
-  { icon: MapPinned, title: "Final-Mile Delivery", desc: "Handed off directly to the receiver's door with proof of delivery and condition reports." },
+  { icon: Home, title: "Doorstep Pickup", desc: "We collect your shipment directly from your home or business anywhere in Malaysia." },
+  { icon: FileCheck2, title: "Customs Clearance", desc: "Our team handles all required customs documentation and clearance for hassle-free shipping." },
+  { icon: Ship, title: "Safe International Shipping", desc: "Your cargo is transported securely from Malaysia to Bangladesh through trusted logistics routes." },
+  { icon: PackageCheck, title: "Home Delivery", desc: "We deliver your shipment safely to the recipient's doorstep anywhere in Bangladesh." },
 ];
 
-const dtdHighlights = [
-  "Door-to-door coverage across 120+ countries",
-  "Single point of contact for every shipment",
-  "Customs clearance and duty handling included",
-  "Insurance and fragile-cargo protocols on request",
+const dtdPhones = [
+  "+60 3 2022 1022",
+  "+60 13 276 7883",
+  "+60 13 276 7884",
+  "+60 13 276 7885",
+  "+60 13 276 7886",
 ];
 
 export function DoorToDoor() {
@@ -164,10 +166,12 @@ export function DoorToDoor() {
         >
           <Badge>Door-to-Door Shipping</Badge>
           <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">
-            One shipment, one team,<br />from your door to theirs.
+            Door-to-Door Cargo Service
           </h2>
+          <div className="mt-2 text-xl sm:text-2xl font-semibold text-brand-red">From Malaysia to Bangladesh</div>
           <p className="mt-5 text-base text-muted-foreground max-w-xl">
-            Fast Cargo owns every step of the journey — pickup, transit, customs, and final delivery — so your operations team never has to chase multiple carriers or vendors again.
+            We pick up your shipment from your doorstep in Malaysia, handle customs clearance,
+            and deliver safely to your recipient's doorstep in Bangladesh — all through one trusted logistics partner.
           </p>
 
           <div className="mt-10 grid sm:grid-cols-2 gap-5">
@@ -189,14 +193,53 @@ export function DoorToDoor() {
             ))}
           </div>
 
-          <ul className="mt-8 grid sm:grid-cols-2 gap-x-6 gap-y-3">
-            {dtdHighlights.map(h => (
-              <li key={h} className="flex items-start gap-2.5 text-sm text-foreground">
-                <Check className="size-4 mt-0.5 text-brand-red shrink-0" />
-                <span>{h}</span>
-              </li>
-            ))}
-          </ul>
+          {/* Contact information */}
+          <div className="mt-10 grid sm:grid-cols-2 gap-5">
+            <div className="rounded-2xl bg-card p-6 border border-border shadow-soft">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                <Mail className="size-3.5 text-brand-red" /> Email
+              </div>
+              <a href="mailto:fastcargomalaysia@gmail.com" className="mt-2 block font-semibold text-sm hover:text-brand-red transition-colors break-all">
+                fastcargomalaysia@gmail.com
+              </a>
+
+              <div className="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                <Phone className="size-3.5 text-brand-red" /> Phone Numbers
+              </div>
+              <ul className="mt-2 space-y-1.5 text-sm font-medium">
+                {dtdPhones.map(p => (
+                  <li key={p}>
+                    <a href={`tel:${p.replace(/\s/g, "")}`} className="hover:text-brand-red transition-colors">{p}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-2xl bg-card p-6 border border-border shadow-soft space-y-5">
+              <div>
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  <MapPin className="size-3.5 text-brand-red" /> Bangladesh Office
+                </div>
+                <address className="mt-2 not-italic text-sm text-foreground leading-relaxed">
+                  Twin Tower Shopping Complex<br />
+                  Shop No. 402, 3rd Floor<br />
+                  Shantinagar, Dhaka-1217<br />
+                  Bangladesh
+                </address>
+              </div>
+              <div className="pt-5 border-t border-border">
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  <MapPin className="size-3.5 text-brand-red" /> Malaysia Office
+                </div>
+                <address className="mt-2 not-italic text-sm text-foreground leading-relaxed">
+                  No. 11 & 13,<br />
+                  Leboh Pudu,<br />
+                  50050 Kuala Lumpur,<br />
+                  Malaysia
+                </address>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
@@ -207,15 +250,22 @@ export function DoorToDoor() {
           className="lg:col-span-5 lg:sticky lg:top-28"
         >
           <div className="relative rounded-3xl overflow-hidden shadow-elevated">
-            <img src={doorTruckImg} alt="Fast Cargo delivery truck at a container terminal" className="w-full h-[560px] object-cover" loading="lazy" width={1024} height={1280} />
+            <img
+              src={doorJourneyImg}
+              alt="Door-to-door cargo journey from Malaysia to Bangladesh: courier pickup, cargo van loading, container yard and home delivery"
+              className="w-full h-[560px] object-cover"
+              loading="lazy"
+              width={1024}
+              height={1280}
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy-deep/20 to-transparent" />
             <div className="absolute top-6 left-6 inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur border border-white/25 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-white">
               <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Live Coordinators Online
+              Malaysia → Bangladesh
             </div>
             <div className="absolute bottom-6 left-6 right-6 text-white">
-              <div className="text-xs uppercase tracking-[0.2em] opacity-80">Coverage</div>
-              <div className="mt-1 text-2xl font-bold leading-tight">120+ countries · 24/7 dispatch</div>
+              <div className="text-xs uppercase tracking-[0.2em] opacity-80">Complete Journey</div>
+              <div className="mt-1 text-2xl font-bold leading-tight">Pickup · Customs · Shipping · Home Delivery</div>
             </div>
           </div>
 
@@ -226,20 +276,24 @@ export function DoorToDoor() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="relative -mt-12 mx-4 lg:mx-6 rounded-2xl bg-card p-6 shadow-elevated border border-border"
           >
-            <div className="flex items-start gap-4">
-              <span className="grid place-items-center size-12 rounded-xl bg-brand-red text-white shrink-0">
-                <Phone className="size-5" />
-              </span>
-              <div className="min-w-0">
-                <div className="font-bold text-base leading-snug">Talk to a coordinator</div>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Get pickup slots and transit options in one call — no forms, no back-and-forth.
-                </p>
-                <a href="tel:+18006683333" className="mt-4 inline-flex items-center gap-2 rounded-full bg-navy-deep hover:bg-navy text-white px-5 py-2.5 text-sm font-semibold transition-all">
-                  Call +1 800 - 668 333
-                  <ArrowRight className="size-4" />
-                </a>
-              </div>
+            <div className="font-bold text-base leading-snug">Need Door-to-Door Shipping?</div>
+            <p className="mt-1.5 text-sm text-muted-foreground">
+              Experience fast, secure, and reliable cargo delivery from Malaysia to Bangladesh.
+            </p>
+            <div className="mt-5 flex flex-col sm:flex-row gap-2.5">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-red hover:bg-brand-red-soft text-white px-5 py-2.5 text-sm font-semibold transition-all hover:shadow-glow-red"
+              >
+                Book Door-to-Door Service
+                <ArrowRight className="size-4" />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-navy-deep hover:bg-navy text-white px-5 py-2.5 text-sm font-semibold transition-all"
+              >
+                Contact Our Team
+              </Link>
             </div>
           </motion.div>
         </motion.div>
@@ -247,6 +301,7 @@ export function DoorToDoor() {
     </section>
   );
 }
+
 
 
 /* ============== 5. Industries We Support ============== */
