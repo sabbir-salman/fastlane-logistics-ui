@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight, Compass, Headphones, ShieldCheck, Target,
-  Package, Network, ClipboardList, Cpu, Check,
-  ClipboardCheck, Workflow, Radar, MapPinned, Phone,
+  Package, Network, ClipboardList, Cpu,
+  Home, FileCheck2, Ship, PackageCheck, Phone, Mail, MapPin,
 } from "lucide-react";
 import { Badge } from "./Services";
 import roadImg from "@/assets/freight-road.jpg";
@@ -11,7 +11,7 @@ import oceanImg from "@/assets/freight-ocean.jpg";
 import containerImg from "@/assets/freight-container.jpg";
 import airImg from "@/assets/freight-air.jpg";
 import industriesImg from "@/assets/industries-truck.jpg";
-import doorTruckImg from "@/assets/door-to-door-truck.jpg";
+import doorJourneyImg from "@/assets/door-to-door-journey.jpg";
 
 /* ============== 2. Core Service Values ============== */
 
