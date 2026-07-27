@@ -4,7 +4,7 @@ import {
   ArrowRight, Compass, Headphones, ShieldCheck, Target,
   Package, Network, ClipboardList, Cpu, Check,
   ClipboardCheck, Workflow, Radar, MapPinned,
-  Home, FileCheck2, Ship, PackageCheck, Phone, Mail, MapPin,
+  Home, FileCheck2, Ship, PackageCheck,
 } from "lucide-react";
 import { Badge } from "./Services";
 import roadImg from "@/assets/freight-road.jpg";
@@ -12,7 +12,7 @@ import oceanImg from "@/assets/freight-ocean.jpg";
 import containerImg from "@/assets/freight-container.jpg";
 import airImg from "@/assets/freight-air.jpg";
 import industriesImg from "@/assets/industries-truck.jpg";
-import doorJourneyImg from "@/assets/door-to-door-journey.jpg";
+import doorJourneyImg from "@/assets/door-to-door-delivery.jpg";
 
 /* ============== 2. Core Service Values ============== */
 
@@ -145,14 +145,6 @@ const dtdSteps = [
   { icon: PackageCheck, title: "Home Delivery", desc: "We deliver your shipment safely to the recipient's doorstep anywhere in Bangladesh." },
 ];
 
-const dtdPhones = [
-  "+60 3 2022 1022",
-  "+60 13 276 7883",
-  "+60 13 276 7884",
-  "+60 13 276 7885",
-  "+60 13 276 7886",
-];
-
 export function DoorToDoor() {
   return (
     <section className="py-24 lg:py-32 bg-soft-gray">
@@ -166,12 +158,12 @@ export function DoorToDoor() {
         >
           <Badge>Door-to-Door Shipping</Badge>
           <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">
-            Door-to-Door Cargo Service
+            We Pick Up. We Deliver.
           </h2>
-          <div className="mt-2 text-xl sm:text-2xl font-semibold text-brand-red">From Malaysia to Bangladesh</div>
+          <div className="mt-2 text-xl sm:text-2xl font-semibold text-brand-red">Complete Door-to-Door Cargo Solution.</div>
           <p className="mt-5 text-base text-muted-foreground max-w-xl">
-            We pick up your shipment from your doorstep in Malaysia, handle customs clearance,
-            and deliver safely to your recipient's doorstep in Bangladesh — all through one trusted logistics partner.
+            We collect your shipment from your doorstep in Malaysia, manage customs clearance,
+            and deliver safely to the recipient's doorstep in Bangladesh — all through one trusted logistics partner.
           </p>
 
           <div className="mt-10 grid sm:grid-cols-2 gap-5">
@@ -192,54 +184,6 @@ export function DoorToDoor() {
               </motion.div>
             ))}
           </div>
-
-          {/* Contact information */}
-          <div className="mt-10 grid sm:grid-cols-2 gap-5">
-            <div className="rounded-2xl bg-card p-6 border border-border shadow-soft">
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                <Mail className="size-3.5 text-brand-red" /> Email
-              </div>
-              <a href="mailto:fastcargomalaysia@gmail.com" className="mt-2 block font-semibold text-sm hover:text-brand-red transition-colors break-all">
-                fastcargomalaysia@gmail.com
-              </a>
-
-              <div className="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                <Phone className="size-3.5 text-brand-red" /> Phone Numbers
-              </div>
-              <ul className="mt-2 space-y-1.5 text-sm font-medium">
-                {dtdPhones.map(p => (
-                  <li key={p}>
-                    <a href={`tel:${p.replace(/\s/g, "")}`} className="hover:text-brand-red transition-colors">{p}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="rounded-2xl bg-card p-6 border border-border shadow-soft space-y-5">
-              <div>
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  <MapPin className="size-3.5 text-brand-red" /> Bangladesh Office
-                </div>
-                <address className="mt-2 not-italic text-sm text-foreground leading-relaxed">
-                  Twin Tower Shopping Complex<br />
-                  Shop No. 402, 3rd Floor<br />
-                  Shantinagar, Dhaka-1217<br />
-                  Bangladesh
-                </address>
-              </div>
-              <div className="pt-5 border-t border-border">
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  <MapPin className="size-3.5 text-brand-red" /> Malaysia Office
-                </div>
-                <address className="mt-2 not-italic text-sm text-foreground leading-relaxed">
-                  No. 11 & 13,<br />
-                  Leboh Pudu,<br />
-                  50050 Kuala Lumpur,<br />
-                  Malaysia
-                </address>
-              </div>
-            </div>
-          </div>
         </motion.div>
 
         <motion.div
@@ -252,7 +196,7 @@ export function DoorToDoor() {
           <div className="relative rounded-3xl overflow-hidden shadow-elevated">
             <img
               src={doorJourneyImg}
-              alt="Door-to-door cargo journey from Malaysia to Bangladesh: courier pickup, cargo van loading, container yard and home delivery"
+              alt="Courier delivering a cargo parcel to a customer's doorstep — complete door-to-door service"
               className="w-full h-[560px] object-cover"
               loading="lazy"
               width={1024}
