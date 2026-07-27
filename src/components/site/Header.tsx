@@ -69,11 +69,11 @@ export function Navbar() {
 
         <div className="flex items-center gap-5">
           <a
-            href="tel:+1800668333"
+            href="tel:+60320221022"
             className="hidden md:flex items-center gap-2 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors"
           >
             <Phone className="size-4" />
-            <span>+1 (800) 668-333</span>
+            <span>+60 3 2022 1022</span>
           </a>
           <a
             href="#quote"
@@ -105,11 +105,11 @@ export function Navbar() {
             ))}
             <div className="mt-2 pt-3 border-t border-white/10 flex flex-col gap-3">
               <a
-                href="tel:+1800668333"
+                href="tel:+60320221022"
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground"
               >
                 <Phone className="size-4" />
-                <span>+1 (800) 668-333</span>
+                <span>+60 3 2022 1022</span>
               </a>
               <a
                 href="#quote"
